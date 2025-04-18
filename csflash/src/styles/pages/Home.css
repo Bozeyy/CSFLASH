@@ -3,33 +3,20 @@
   background-color: #0A1929;
   overflow-x: hidden;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .maps-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: auto;
-  padding: 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: #FF6B00 #222222;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.maps-container::-webkit-scrollbar {
-  width: 8px;
+.map-card {
+  width: 90%;
+  height: 25vh;
 }
-
-.maps-container::-webkit-scrollbar-track {
-  background: #222222;
-  border-radius: 4px;
-}
-
-.maps-container::-webkit-scrollbar-thumb {
-  background: #FF6B00;
-  border-radius: 4px;
-}
-
-.maps-container::-webkit-scrollbar-thumb:hover {
-  background: #FF8533;
-} 
