@@ -6,23 +6,23 @@ function Home() {
   const maps = [
     {
       title: "Dust 2",
-      imageUrl: "./public/images/map/dust.jpg"
+      imageUrl: "./images/map/dust.jpg"
     },
     {
       title: "Mirage",
-      imageUrl: "./public/images/map/mirage.jpg"
+      imageUrl: "./images/map/mirage.jpg"
     },
     {
       title: "Inferno",
-      imageUrl: "./public/images/map/inferno.jpg"
+      imageUrl: "./images/map/inferno.jpg"
     },
     {
       title: "Nuke",
-      imageUrl: "./public/images/map/nuke.jpeg"
+      imageUrl: "./images/map/nuke.jpeg"
     },
     {
       title: "Overpass",
-      imageUrl: "./public/images/map/overpass.jpg"
+      imageUrl: "./images/map/overpass.jpg"
     }
   ];
 
