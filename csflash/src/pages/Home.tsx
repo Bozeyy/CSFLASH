@@ -14,12 +14,24 @@ function Home() {
       imageUrl: "/images/map/mirage.jpg"
     },
     {
+      title: "Anubis",
+      imageUrl: "/images/map/anubis.jpg"
+    },
+    {
       title: "Inferno",
       imageUrl: "/images/map/inferno.jpg"
     },
     {
       title: "Nuke",
       imageUrl: "/images/map/nuke.jpg"
+    },
+    {
+      title: "Train",
+      imageUrl: "/images/map/train.jpg"
+    },
+    {
+      title: "Ancient",
+      imageUrl: "/images/map/ancient.jpg"
     },
     {
       title: "Overpass",
