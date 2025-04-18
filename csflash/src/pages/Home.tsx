@@ -1,6 +1,6 @@
 import Header from '../components/Header';
 import MapCard from '../components/MapCard';
-import '../styles/Home.css';
+import '../styles/pages/Home.css';
 
 function Home() {
   const maps = [
