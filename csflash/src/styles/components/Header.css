@@ -14,6 +14,19 @@
   align-items: center;
 }
 
+.header-logo {
+  cursor: pointer;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
 .header-title {
   color: #FF6B00;
   margin: 0;
