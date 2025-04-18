@@ -1,4 +1,5 @@
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import MapCard from '../components/MapCard';
 import '../styles/pages/Home.css';
 
@@ -6,23 +7,23 @@ function Home() {
   const maps = [
     {
       title: "Dust 2",
-      imageUrl: "./images/map/dust.jpg"
+      imageUrl: "/images/map/dust.jpg"
     },
     {
       title: "Mirage",
-      imageUrl: "./images/map/mirage.jpg"
+      imageUrl: "/images/map/mirage.jpg"
     },
     {
       title: "Inferno",
-      imageUrl: "./images/map/inferno.jpg"
+      imageUrl: "/images/map/inferno.jpg"
     },
     {
       title: "Nuke",
-      imageUrl: "./images/map/nuke.jpeg"
+      imageUrl: "/images/map/nuke.jpg"
     },
     {
       title: "Overpass",
-      imageUrl: "./images/map/overpass.jpg"
+      imageUrl: "/images/map/overpass.jpg"
     }
   ];
 
@@ -38,6 +39,7 @@ function Home() {
           />
         ))}
       </div>
+      <Footer />
     </div>
   );
 }

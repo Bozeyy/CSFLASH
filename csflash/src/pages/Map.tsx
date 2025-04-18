@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import '../styles/pages/Map.css';
 
 const Map: React.FC = () => {
@@ -52,6 +53,7 @@ const Map: React.FC = () => {
           </select>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

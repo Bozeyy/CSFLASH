@@ -4,6 +4,9 @@
   position: relative;
   overflow: hidden;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .map-background {
