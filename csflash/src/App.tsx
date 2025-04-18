@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/map/:mapName" element={<Map mapName="" />} />
+        <Route path="/map/:mapName" element={<Map />} />
       </Routes>
     </Router>
   );
