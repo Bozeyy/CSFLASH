@@ -17,7 +17,7 @@ const MapCard: React.FC<MapCardProps> = ({ title, imageUrl }) => {
   return (
     <div className="map-card" onClick={handleClick}>
       <img src={imageUrl} alt={title} className="map-image" />
-      <h3 className="map-title">{title}</h3>
+      {/* <h3 className="map-title">{title}</h3> */}
     </div>
   );
 };
