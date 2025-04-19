@@ -1,14 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import UtilityMarker from '../components/UtilityMarker';
+import { MapData, Utility } from '../types/map';
 import '../styles/pages/Map.css';
 
 const Map: React.FC = () => {
   const { mapName } = useParams();
-  const [gameMode, setGameMode] = useState('solo');
+  const [gameMode, setGameMode] = useState('stuff');
+  const [scale, setScale] = useState(1);
+  const minimapRef = useRef<HTMLDivElement>(null);
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      const delta = e.deltaY * -0.01;
+      const newScale = Math.min(Math.max(1, scale + delta), 4);
+      setScale(newScale);
+    }
+  };
 
   const gameModes = [
+    { id: 'stuff', label: 'Stuff' },
     { id: 'solo', label: 'Solo' },
     { id: 'duo', label: 'Duo' },
     { id: 'trio', label: 'Trio' },
@@ -33,6 +47,32 @@ const Map: React.FC = () => {
     return mapImages[mapName] || '';
   };
 
+  // Exemple de données de carte (à remplacer par des données réelles)
+  const mapData: MapData = {
+    name: formattedMapName || '',
+    minimapUrl: `/map/${mapName}.jpg`,
+    utilities: [
+      {
+        type: 'smoke',
+        position: { x: 30, y: 40 },
+        positions: [
+          { x: 25, y: 35 },
+          { x: 35, y: 45 }
+        ],
+        description: 'Smoke pour bloquer le site A'
+      },
+      {
+        type: 'flash',
+        position: { x: 60, y: 50 },
+        positions: [
+          { x: 55, y: 45 },
+          { x: 65, y: 55 }
+        ],
+        description: 'Flash pour entrer sur le site'
+      }
+    ]
+  };
+
   return (
     <div className="map-page">
       <div className="map-background" style={{ backgroundImage: `url(${getMapImage(mapName)})` }} />
@@ -52,6 +92,29 @@ const Map: React.FC = () => {
             ))}
           </select>
         </div>
+        {gameMode === 'stuff' && (
+          <div 
+            ref={minimapRef}
+            className="minimap-container"
+            onWheel={handleWheel}
+          >
+            <div style={{ 
+              transform: `scale(${scale})`,
+              transformOrigin: 'center',
+              width: '100%',
+              height: '100%'
+            }}>
+              <img 
+                src={mapData.minimapUrl} 
+                alt={`Minimap ${mapData.name}`} 
+                className="minimap"
+              />
+              {mapData.utilities.map((utility: Utility, index: number) => (
+                <UtilityMarker key={index} utility={utility} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
       <Footer />
     </div>

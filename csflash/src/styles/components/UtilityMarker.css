@@ -1,0 +1,69 @@
+.utility-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.utility-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid;
+  transition: all 0.3s ease;
+  padding: 4px;
+}
+
+.utility-icon:hover {
+  transform: scale(1.1);
+}
+
+.utility-icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.utility-icon.smoke {
+  border-color: #808080;
+}
+
+.utility-icon.flash {
+  border-color: #FFD700;
+}
+
+.utility-icon.molo {
+  border-color: #FF4500;
+}
+
+.positions-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.position-marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #00FF00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.utility-description {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+} 
