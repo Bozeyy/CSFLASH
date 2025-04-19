@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -18,7 +18,6 @@ import '../styles/pages/Map.css';
  * 
  * La minimap permet de :
  * - Voir les positions des utilitaires
- * - Zoomer/dézoomer avec la molette ou le pincement
  * - Afficher les positions de lancer en cliquant sur un utilitaire
  * 
  * @returns {JSX.Element} La page Map
@@ -28,24 +27,6 @@ const Map: React.FC = () => {
   const { mapName } = useParams();
   // État pour le mode de jeu sélectionné
   const [gameMode, setGameMode] = useState('stuff');
-  // État pour le niveau de zoom de la minimap
-  const [scale, setScale] = useState(1);
-  // Référence vers le conteneur de la minimap
-  const minimapRef = useRef<HTMLDivElement>(null);
-
-  /**
-   * Gère le zoom avec la molette de la souris
-   * Ne fonctionne qu'avec la touche Ctrl enfoncée
-   * Limite le zoom entre 1x et 4x
-   */
-  const handleWheel = (e: React.WheelEvent) => {
-    if (e.ctrlKey) {
-      e.preventDefault();
-      const delta = e.deltaY * -0.01;
-      const newScale = Math.min(Math.max(1, scale + delta), 4);
-      setScale(newScale);
-    }
-  };
 
   /**
    * Configuration des modes de jeu disponibles
@@ -91,7 +72,7 @@ const Map: React.FC = () => {
    */
   const mapData: MapData = {
     name: formattedMapName || '',
-    minimapUrl: `/map/${mapName}.jpg`,
+    minimapUrl: `/map/${mapName}.png`,
     utilities: [
       {
         type: 'smoke',
@@ -143,28 +124,15 @@ const Map: React.FC = () => {
 
         {/* Minimap interactive (visible uniquement en mode Stuff) */}
         {gameMode === 'stuff' && (
-          <div 
-            ref={minimapRef}
-            className="minimap-container"
-            onWheel={handleWheel}
-          >
-            <div style={{ 
-              transform: `scale(${scale})`,
-              transformOrigin: 'center',
-              width: '100%',
-              height: '100%'
-            }}>
-              {/* Image de la minimap */}
-              <img 
-                src={mapData.minimapUrl} 
-                alt={`Minimap ${mapData.name}`} 
-                className="minimap"
-              />
-              {/* Marqueurs d'utilitaires */}
-              {mapData.utilities.map((utility: Utility, index: number) => (
-                <UtilityMarker key={index} utility={utility} />
-              ))}
-            </div>
+          <div className="minimap-container">
+            <img 
+              src={mapData.minimapUrl} 
+              alt={`Minimap ${mapData.name}`} 
+              className="minimap"
+            />
+            {mapData.utilities.map((utility: Utility, index: number) => (
+              <UtilityMarker key={index} utility={utility} />
+            ))}
           </div>
         )}
       </div>
