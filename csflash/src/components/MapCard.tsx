@@ -40,7 +40,7 @@ const MapCard: React.FC<MapCardProps> = ({ title, imageUrl }) => {
       {/* Image de la carte en arrière-plan */}
       <img src={imageUrl} alt={title} className="map-image" />
       {/* Titre de la carte avec effet de flou en arrière-plan */}
-      <h3 className="map-title">{title}</h3>
+      {/* <h3 className="map-title">{title}</h3> */}
     </div>
   );
 };
