@@ -1,0 +1,75 @@
+.combo-card {
+  background-color: rgba(26, 38, 52, 0.9);
+  border: 2px solid #FF6B00;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  width: 300px;
+}
+
+.combo-card:hover {
+  transform: translateY(-5px);
+  border-color: #FF8533;
+  background-color: rgba(26, 38, 52, 1);
+}
+
+.combo-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.combo-title {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.play-icon {
+  color: #FF6B00;
+  font-size: 1.5rem;
+}
+
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  z-index: 1001;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+} 

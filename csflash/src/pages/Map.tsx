@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import UtilityMarker from '../components/UtilityMarker';
+import ComboCard from '../components/ComboCard';
 import { MapData, Utility } from '../types/map';
 import '../styles/pages/Map.css';
 
@@ -123,7 +124,7 @@ const Map: React.FC = () => {
         </div>
 
         {/* Minimap interactive (visible uniquement en mode Stuff) */}
-        {gameMode === 'stuff' && (
+        {gameMode === 'stuff' ? (
           <div className="minimap-container">
             <img 
               src={mapData.minimapUrl} 
@@ -133,6 +134,30 @@ const Map: React.FC = () => {
             {mapData.utilities.map((utility: Utility, index: number) => (
               <UtilityMarker key={index} utility={utility} />
             ))}
+          </div>
+        ) : (
+          <div className="combos-container">
+            <ComboCard
+              title="Entrée A Site"
+              description="Combo d'entrée sur le site A avec smokes et flashes"
+              videoUrl="https://youtu.be/5PNdIYMhgPA"
+              difficulty="Intermédiaire"
+              type={gameMode}
+            />
+            <ComboCard
+              title="Retake B Site"
+              description="Stratégie de reprise du site B"
+              videoUrl="https://youtu.be/5PNdIYMhgPA"
+              difficulty="Avancé"
+              type={gameMode}
+            />
+            <ComboCard
+              title="Mid Control"
+              description="Prise de contrôle du milieu de carte"
+              videoUrl="https://youtu.be/5PNdIYMhgPA"
+              difficulty="Débutant"
+              type={gameMode}
+            />
           </div>
         )}
       </div>
