@@ -6,7 +6,6 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  flex: 1;
 }
 
 .map-background {
@@ -82,12 +81,9 @@
 }
 
 .combos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  z-index: 1;
-  position: relative;
-} 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
