@@ -85,12 +85,18 @@ const Map: React.FC = () => {
           videoUrl: "https://www.youtube.com/embed/voLaJHWRXtk",
           difficulty: "Intermédiaire",
         },
+        {
+          title: "T - TIMING GENERATOR B",
+          description: "Combo en duo pour contrôler le site A.",
+          videoUrl: "https://www.youtube.com/embed/M3ajuN7l8AE",
+          difficulty: "Avancé",
+        },
       ],
       trio: [
         {
           title: "T - FAST TAKE MID EN DUO",
           description: "Combo en trio pour contrôler le mid.",
-          videoUrl: "https://www.youtube.com/embed/voLaJHWRXtk",
+          videoUrl: "https://www.youtube.com/embed/voLaJHWRXtk", 
           difficulty: "Avancé",
         },
       ],
