@@ -67,6 +67,49 @@ const Map: React.FC = () => {
     return mapImages[mapName] || '';
   };
 
+  const comboData: {
+  [mapName: string]: {
+    [gameMode: string]: {
+      title: string;
+      description: string;
+      videoUrl: string;
+      difficulty: string;
+    }[];
+  };
+} = {
+  'anubis': {
+    'duo': [
+      {
+        title: 'T - FAST TAKE MID EN DUO',
+        description: 'Combo en duo pour rentrer sur le site B.',
+        videoUrl: 'https://youtube.com/shorts/voLaJHWRXtk',
+        difficulty: 'Intermédiaire',
+      },
+    ],
+    'trio': [
+      {
+        title: 'T - FAST TAKE MID EN DUO',
+        description: 'Combo en trio pour contrôler le mid.',
+        videoUrl: 'https://youtube.com/shorts/voLaJHWRXtk',
+        difficulty: 'Avancé',
+      },
+    ],
+  },
+  'dust-2': {
+    'duo': [
+      {
+        title: 'Cross Long Duo',
+        description: 'Cross du Long en duo.',
+        videoUrl: 'https://youtu.be/xxxxx',
+        difficulty: 'Débutant',
+      },
+    ],
+    // autres modes...
+  },
+  // autres maps...
+};
+
+
   /**
    * Données de la carte avec les utilitaires
    * À remplacer par des données réelles depuis une API ou une base de données
@@ -125,41 +168,35 @@ const Map: React.FC = () => {
 
         {/* Minimap interactive (visible uniquement en mode Stuff) */}
         {gameMode === 'stuff' ? (
-          <div className="minimap-container">
-            <img 
-              src={mapData.minimapUrl} 
-              alt={`Minimap ${mapData.name}`} 
-              className="minimap"
-            />
-            {mapData.utilities.map((utility: Utility, index: number) => (
-              <UtilityMarker key={index} utility={utility} />
-            ))}
-          </div>
-        ) : (
-          <div className="combos-container">
-            <ComboCard
-              title="Entrée A Site"
-              description="Combo d'entrée sur le site A avec smokes et flashes"
-              videoUrl="https://youtu.be/5PNdIYMhgPA"
-              difficulty="Intermédiaire"
-              type={gameMode}
-            />
-            <ComboCard
-              title="Retake B Site"
-              description="Stratégie de reprise du site B"
-              videoUrl="https://youtu.be/5PNdIYMhgPA"
-              difficulty="Avancé"
-              type={gameMode}
-            />
-            <ComboCard
-              title="Mid Control"
-              description="Prise de contrôle du milieu de carte"
-              videoUrl="https://youtu.be/5PNdIYMhgPA"
-              difficulty="Débutant"
-              type={gameMode}
-            />
-          </div>
-        )}
+  <div className="minimap-container">
+    <img 
+      src={mapData.minimapUrl} 
+      alt={`Minimap ${mapData.name}`} 
+      className="minimap"
+    />
+    {mapData.utilities.map((utility: Utility, index: number) => (
+      <UtilityMarker key={index} utility={utility} />
+    ))}
+  </div>
+) : (
+  <div className="combos-container">
+    {comboData[mapName || ''] && comboData[mapName || ''][gameMode] ? (
+      comboData[mapName || ''][gameMode].map((combo, index) => (
+        <ComboCard
+          key={index}
+          title={combo.title}
+          description={combo.description}
+          videoUrl={combo.videoUrl}
+          difficulty={combo.difficulty}
+          type={gameMode}
+        />
+      ))
+    ) : (
+      <p>Aucun combo disponible pour ce mode de jeu sur cette carte.</p>
+    )}
+  </div>
+)}
+
       </div>
 
       {/* Pied de page */}
