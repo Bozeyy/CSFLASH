@@ -25,6 +25,10 @@ function Home() {
    */
   const maps = [
     {
+      title: "Anubis",
+      imageUrl: "/images/map/anubis.jpg"
+    },
+    {
       title: "Dust 2",
       imageUrl: "/images/map/dust.jpg"
     },
@@ -32,10 +36,7 @@ function Home() {
       title: "Mirage",
       imageUrl: "/images/map/mirage.jpg"
     },
-    {
-      title: "Anubis",
-      imageUrl: "/images/map/anubis.jpg"
-    },
+    
     {
       title: "Inferno",
       imageUrl: "/images/map/inferno.jpg"
