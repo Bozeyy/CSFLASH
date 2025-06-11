@@ -101,12 +101,12 @@ const Map: React.FC = () => {
         },
       ],
     },
-    "dust-2": {
+    ancient: {
       duo: [
         {
-          title: "Cross Long Duo",
-          description: "Cross du Long en duo.",
-          videoUrl: "https://youtu.be/xxxxx",
+          title: "T - FAST TAKE MID EN DUO",
+          description: "Combo en duo pour prendre le mid rapidement.",
+          videoUrl: "https://www.youtube.com/embed/qfbxAuiqKVI",
           difficulty: "Débutant",
         },
       ],

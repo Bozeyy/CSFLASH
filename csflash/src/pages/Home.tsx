@@ -29,6 +29,10 @@ function Home() {
       imageUrl: "/images/map/anubis.jpg"
     },
     {
+      title: "Ancient",
+      imageUrl: "/images/map/ancient.jpg"
+    },
+    {
       title: "Dust 2",
       imageUrl: "/images/map/dust.jpg"
     },
@@ -49,10 +53,7 @@ function Home() {
       title: "Train",
       imageUrl: "/images/map/train.jpg"
     },
-    {
-      title: "Ancient",
-      imageUrl: "/images/map/ancient.jpg"
-    },
+    
     {
       title: "Overpass",
       imageUrl: "/images/map/overpass.jpg"
