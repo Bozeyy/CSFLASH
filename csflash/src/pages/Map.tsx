@@ -120,8 +120,16 @@ const Map: React.FC = () => {
         {
           title: "T - FAST TAKE MID EN DUO",
           description: "Combo en duo pour prendre le mid rapidement.",
-          videoUrl: "https://www.youtube.com/embed/qfbxAuiqKVI",
+          videoUrl: "https://www.youtube.com//qfbxAuiqKVI",
           difficulty: "Débutant",
+        },
+      ],
+      team: [
+        {
+          title: "T - FAST TAKE MID ENSUITE EXEC A",
+          description: "",
+          videoUrl: "https://youtube.com/embed/X8wnPEN_FGE",
+          difficulty: "Expert",
         },
       ],
       // autres modes...
