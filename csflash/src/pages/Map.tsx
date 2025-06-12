@@ -106,6 +106,14 @@ const Map: React.FC = () => {
           difficulty: "Avancé",
         },
       ],
+      team: [
+        {
+          title: "CT - CRUNCH WATER + COUNTER MID REACTION",
+          description: "",
+          videoUrl: "https://youtube.com/embed/QUFpwrxE3l4",
+          difficulty: "Expert",
+        },
+      ],
     },
     ancient: {
       duo: [
