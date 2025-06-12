@@ -91,6 +91,12 @@ const Map: React.FC = () => {
           videoUrl: "https://www.youtube.com/embed/M3ajuN7l8AE",
           difficulty: "Avancé",
         },
+        {
+          title: "T - EDGE SMOKE B",
+          description: "Combo en duo pour edge une smoke sur le site B.",
+          videoUrl: "https://www.youtube.com/embed/IkkhzxQnspk",
+          difficulty: "Avancé",
+        },
       ],
       trio: [
         {
