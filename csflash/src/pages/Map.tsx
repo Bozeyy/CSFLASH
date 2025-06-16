@@ -63,6 +63,7 @@ const Map: React.FC = () => {
       inferno: "/images/map/inferno.jpg",
       nuke: "/images/map/nuke.jpg",
       overpass: "/images/map/overpass.jpg",
+      train: "/images/map/train.jpg",
     };
     return mapImages[mapName] || "";
   };
@@ -132,7 +133,24 @@ const Map: React.FC = () => {
           difficulty: "Expert",
         },
       ],
+
       // autres modes...
+    },
+    train: {
+      duo: [
+        {
+          title: "T - TAKE B UPPER ",
+          description: "",
+          videoUrl: "https://youtube.com/embed/k4Sy08R7uJM",
+          difficulty: "Intermédiaire",
+        },
+        {
+          title: "T - TAKE IVY",
+          description: "",
+          videoUrl: "https://youtube.com/embed/7m03RQvsjqY",
+          difficulty: "Intermédiaire",
+        }
+      ],
     },
     // autres maps...
   };

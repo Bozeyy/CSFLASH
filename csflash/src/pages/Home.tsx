@@ -33,6 +33,10 @@ function Home() {
       imageUrl: "/images/map/ancient.jpg"
     },
     {
+      title: "Train",
+      imageUrl: "/images/map/train.jpg"
+    },
+    {
       title: "Dust 2",
       imageUrl: "/images/map/dust.jpg"
     },
@@ -49,11 +53,6 @@ function Home() {
       title: "Nuke",
       imageUrl: "/images/map/nuke.jpg"
     },
-    {
-      title: "Train",
-      imageUrl: "/images/map/train.jpg"
-    },
-    
     {
       title: "Overpass",
       imageUrl: "/images/map/overpass.jpg"
