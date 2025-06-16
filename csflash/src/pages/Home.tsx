@@ -37,6 +37,10 @@ function Home() {
       imageUrl: "/images/map/train.jpg"
     },
     {
+      title: "Nuke",
+      imageUrl: "/images/map/nuke.jpg"
+    },
+    {
       title: "Dust 2",
       imageUrl: "/images/map/dust.jpg"
     },
@@ -48,10 +52,6 @@ function Home() {
     {
       title: "Inferno",
       imageUrl: "/images/map/inferno.jpg"
-    },
-    {
-      title: "Nuke",
-      imageUrl: "/images/map/nuke.jpg"
     },
     {
       title: "Overpass",

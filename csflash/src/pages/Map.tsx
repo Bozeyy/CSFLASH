@@ -27,7 +27,7 @@ const Map: React.FC = () => {
   // Récupération du nom de la carte depuis l'URL
   const { mapName } = useParams();
   // État pour le mode de jeu sélectionné
-  const [gameMode, setGameMode] = useState("stuff");
+  const [gameMode, setGameMode] = useState("duo");
 
   /**
    * Configuration des modes de jeu disponibles
@@ -61,9 +61,9 @@ const Map: React.FC = () => {
       "dust-2": "/images/map/dust.jpg",
       mirage: "/images/map/mirage.jpg",
       inferno: "/images/map/inferno.jpg",
-      nuke: "/images/map/nuke.jpg",
       overpass: "/images/map/overpass.jpg",
       train: "/images/map/train.jpg",
+      nuke: "/images/map/nuke.png",
     };
     return mapImages[mapName] || "";
   };
@@ -152,7 +152,30 @@ const Map: React.FC = () => {
         }
       ],
     },
-    // autres maps...
+    nuke: {
+      solo: [
+        {
+          title: "CT - COUNTER NAVI WALL OUTSIDE",
+          description: "",
+          videoUrl: "https://youtube.com/embed/S2bUB4ionng?feature=share",
+          difficulty: "Débutant",
+        },
+        {
+          title: "T - SNEEKING THROUGH SMOKE MAIN NUKE",
+          description: "",
+          videoUrl: "https://youtube.com/embed/DBRFIa0w8i4?feature=share",
+          difficulty: "Intermédiaire",
+        },
+      ],
+      duo: [
+        {
+          title: "T - SNEEKING THROUGH SMOKE MAIN NUKE",
+          description: "",
+          videoUrl: "https://youtube.com/embed/DBRFIa0w8i4?feature=share",
+          difficulty: "Intermédiaire",
+        },
+      ],
+    },
   };
 
   /**
